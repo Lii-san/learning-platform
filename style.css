@@ -397,6 +397,7 @@ main {
     padding: 40px 0;
     flex: 1;
     background-color: #F5F5F5;
+    gap: 64px;
 }
 
 .hero-slider {
@@ -418,36 +419,36 @@ main {
     gap: 24px;
     width: 132px;
     height: 54px;
+    z-index: 10;
 }
 
 .slider-arrow {
-    cursor: pointer;
     width: 54px;
     height: 54px;
     border-radius: 50%;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    cursor: pointer;
     background-color: transparent;
     flex-shrink: 0;
     padding: 0;
-    position: relative;
-    background-color: rgba(0,0,0,0.001);
 }
 
-.slider-arrow img {
-    width: 54px;
-    height: 54px;
-    display: inline-block;
-    pointer-events: none;
-}
-
-.slider-arrow.active {
-    color: #FFFFFF;
-}
 .slider-arrow.disabled {
     pointer-events: none;
+}
+
+.slider-arrow.left {
+    background-image: url('assets/ArrowleftDisabled.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.slider-arrow.right {
+    background-image: url('assets/ArrowrightActive.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .slider-dots {
@@ -546,7 +547,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin-top: 40px;
 }
 
 .section-header {
@@ -740,4 +740,328 @@ main {
     color: #FFFFFF;
     cursor: pointer;
     text-decoration: none;
+}
+
+
+
+.continue-learning-logged-out {
+    width: 1566px;
+    height: 369px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+}
+
+.continue-learning-logged-in {
+    width: 1566px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.continue-learning-header h2 {
+    height: 48px;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #0A0A0A;
+}
+
+.continue-learning-header p {
+    width: 538px;
+    height: 22px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #3D3D3D;
+    white-space: nowrap;
+}
+
+.continue-learning-header {
+    width: 1566px;
+    height: 76px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 28px;
+}
+
+.continue-learning-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.see-all {
+    align-self: flex-end;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: #4F46E5;
+}
+
+.continue-learning-cards-b {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+
+.continue-learning-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 1566px;
+    height: 219px;
+    position: relative;
+}
+
+.continue-learning-card {
+    width: 506px;
+    height: 219px;
+    border-radius: 12px;
+    padding: 20px;
+    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+}
+
+.continue-learning-card-top {
+    display: flex;
+    flex-direction: row;
+    width: 466px;
+    height: 123px;
+    gap: 16px;
+    opacity: 0.76;
+}
+
+.continue-learning-card-image {
+    width: 140px;
+    height: 123px;
+    max-width: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.continue-learning-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.continue-learning-card-info {
+    display: flex;
+    flex-direction: column;
+    width: 326px;
+    height: 123px;
+    padding: 0 4px 0 0;
+    gap: 9px;
+}
+
+.continue-learning-card-info-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.continue-learning-instructor {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.continue-learning-instructor .lecturer-label {
+    color: #8A8A8A;
+    margin-right: 3.5px;
+}
+
+.continue-learning-instructor .lecturer-name {
+    color: #666666;
+}
+
+.continue-learning-title {
+    width: 306px;
+    height: 48px;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.31px;
+    color: #141414;
+}
+
+.continue-learning-card-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 466px;
+    height: 48px;
+    opacity: 0.76;
+}
+
+.continue-learning-progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 336px;
+    height: 39.31px;
+    padding-bottom: 4px;
+    gap: 4px;
+}
+
+.continue-learning-progress-text {
+    height: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #141414;
+}
+
+.progress-bar-wrapper {
+    width: 336px;
+    height: 15.13px;
+    border-radius: 30px;
+    background-color: #DDDBFA;
+    position: relative;
+}
+
+.progress-bar {
+    width: 202.56px;
+    height: 15.13px;
+    border-radius: 30px;
+    background-color: #4F46E5;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.btn-view {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid #958FEF;
+    padding: 12px 16px;
+    gap: 2px;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #4F46E5;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.continue-learning-logged-out .continue-learning-cards-b {
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+
+.login-prompt {
+    position: absolute;
+    width: 418px;
+    height: 233px;
+    border-radius: 12px;
+    border: 1px solid #ADADAD;
+    padding: 32px 56px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.continue-learning-cards-wrapper {
+    position: relative;
+    width: 1566px;
+    height: 219px;
+}
+
+.login-prompt-inner {
+    width: 306px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.login-prompt-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 74px;
+    height: 77px;
+    border-radius: 50px;
+    padding: 20px;
+    gap: 10px;
+    background-color: #DDDBFA;
+}
+
+.login-prompt-icon img {
+    width: 34px;
+    height: 37px;
+}
+
+.login-prompt-top {
+    width: 306px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-prompt-text {
+    height: 24px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: center;
+    color: #0A0836;
+}
+
+.btn-login-prompt {
+    width: 83px;
+    height: 42px;
+    border-radius: 8px;
+    padding: 17px 25px;
+    gap: 10px;
+    background-color: #4F46E5;
+    border: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    white-space: nowrap;
 }

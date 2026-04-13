@@ -13,19 +13,19 @@ function updateSlider() {
     dots[currentSlide].classList.add('active');
 
     if (currentSlide === 0) {
-        leftArrow.classList.add('disabled');
-        leftArrow.querySelector('img').src = 'assets/ArrowleftDisabled.svg';
-    } else {
-        leftArrow.classList.remove('disabled');
-        leftArrow.querySelector('img').src = 'assets/ArrowleftActive.svg';
-    }
+    leftArrow.classList.add('disabled');
+    leftArrow.style.backgroundImage = "url('assets/ArrowleftDisabled.svg')";
+        } else {
+            leftArrow.classList.remove('disabled');
+            leftArrow.style.backgroundImage = "url('assets/ArrowleftActive.svg')";
+        }
 
-    if (currentSlide === slides.length - 1) {
-        rightArrow.classList.add('disabled');
-        rightArrow.querySelector('img').src = 'assets/ArrowrightDisabled.svg';
-    } else {
-        rightArrow.classList.remove('disabled');
-        rightArrow.querySelector('img').src = 'assets/ArrowrightActive.svg';
+        if (currentSlide === slides.length - 1) {
+            rightArrow.classList.add('disabled');
+            rightArrow.style.backgroundImage = "url('assets/ArrowrightDisabled.svg')";
+        } else {
+            rightArrow.classList.remove('disabled');
+            rightArrow.style.backgroundImage = "url('assets/ArrowrightActive.svg')";
     }
 }
 
@@ -49,3 +49,9 @@ dots.forEach((dot, index) => {
         updateSlider();
     });
 });
+
+// when logged out
+continueLearning.classList.add('continue-learning-logged-out');
+
+// when logged in
+continueLearning.classList.add('continue-learning-logged-in');
