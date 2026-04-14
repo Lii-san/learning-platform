@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Course Catalog</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="assets/logo.svg" alt="logo">
+                    </div>
+                </a>
+            </div>
+            <div class="nav-right">
+                <a  href="catalog.html" class="browse-link">
+                    <img src="assets/Nav icon.svg" alt="">
+                   <span>Browse Courses</span></a>
+
+                <!-- logged out -->
+                <div class="nav-auth" id="nav-logged-out">
+                    <button class="btn-login">Log In</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
+
+                <div class="nav-user" id="nav-logged-in">
+                    <a href="#" class="enrolled-link">
+                        <img src="assets/Nav icon2.svg" alt="">
+                        <span> Enrolled Courses </span>
+                    </a>
+                    <a href="#" class="profile-icon">
+                        <img src="assets/User.svg" alt="profile">
+                        <span class="status-dot"></span>
+                    </a>
+                </div>
+
+            </div>
+
+        </nav>
+        
+        <main class="catalog-main">
+            <div class="breadcrumbs">
+                <a href="index.html" class="breadcrumbs-home">Home</a>
+                <img src="assets/gt.svg" alt="" class="breadcrumbs-arrow">
+                <span class="breadcrumbs-browse">Browse</span>
+            </div>
+
+            <div class="catalog-content">
+                <div class="catalog-left">
+
+                    <div class="filters">
+                        <div class="filters-top">
+                            <h2 class="filters-txt">Filters</h2> 
+                            <button class="filters-remove">
+                                <span class="filters-remove-text">Clear All Filters</span>
+                                <img class="filters-remove-x" src="assets/X.svg" alt="X">
+                            </button>
+                        </div>
+
+                        <div  class="filters-mid">
+                            <div class="filters-categories">
+                                <span class="filters-categories-text">Categories</span>
+                                <div class="filters-categories-choice">
+                                    <button class="filter-chip">
+                                        <img src="assets/dev-icon.svg" alt=""> Development
+                                    </button>
+                                    <button class="filter-chip">
+                                        <img src="assets/design-icon.svg" alt=""> Design
+                                    </button>
+                                    <button class="filter-chip">
+                                        <img src="assets/business.svg" alt=""> Business
+                                    </button>
+                                    <button class="filter-chip">
+                                        <img src="assets/datascience-icon.svg" alt=""> Data Science
+                                    </button>
+                                    <button class="filter-chip">
+                                        <img src="assets/marketing-icon.svg" alt=""> Marketing
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="filters-topics">
+                                <span class="filters-topics-text">Topics</span>
+                                <div class="filters-topics-choice">
+                                    <button class="filter-chip">React</button>
+                                    <button class="filter-chip">TypeScript</button>
+                                    <button class="filter-chip">Phyton</button>
+                                    <button class="filter-chip">UX/UI</button>
+                                    <button class="filter-chip">Figma</button>
+                                    <button class="filter-chip">JavaScript</button>
+                                    <button class="filter-chip">Node.js</button>
+                                    <button class="filter-chip">Machine Learning</button>
+                                    <button class="filter-chip">Seo</button>
+                                    <button class="filter-chip">Analytics</button>
+                                </div>
+                            </div>
+                            <div class="filters-instructor">
+                                <span class="filters-instructor-text">instructor</span>
+                                <div class="filters-instructor-choice">
+                                    <button class="instructor-chip">
+                                        <img src="assets/instructor1.jpg" alt="Marilyn Mango">
+                                        <span>Marilyn Mango</span>
+                                    </button>
+                                    <button class="instructor-chip">
+                                        <img src="assets/instructor2.jpg" alt="Ryan Dorwart">
+                                        <span>Ryan Dorwart</span>
+                                    </button>
+                                    <button class="instructor-chip">
+                                        <img src="assets/instructor3.jpg" alt="Roger Calzoni">
+                                        <span>Roger Calzoni</span>
+                                    </button>
+                                    <button class="instructor-chip">
+                                        <img src="assets/instructor4.jpg" alt="Zain Philips">
+                                        <span>Zain Philips</span>
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="filters-bottom">
+                            <div class="filters-bottom-text">
+                                <span class="filter-count">0</span>
+                                <span>&nbsp;Filters Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="catalog-right">
+
+                    <div class="catalog-top">
+                        <span class="catalog-showing">Showing 9 out of 90</span>
+                        <button class="catalog-sort">
+                            <span class="sort-label">Sort By:</span>
+                            <div class="sort-dropdown">
+                                <div class="sort-selected">
+                                    <span style="white-space: nowrap;">Newest First</span>
+                                </div>
+                                <div class="sort-options">
+                                    <div class="sort-option active">Newest First</div>
+                                    <div class="sort-option">Price: Low to High</div>
+                                    <div class="sort-option">Price: High to Low</div>
+                                    <div class="sort-option">Most Popular</div>
+                                    <div class="sort-option">Title: A-Z</div>
+                                </div>
+                            </div>
+                            <img class="sort-selected-img" src="assets/dropdown-arrow.svg" alt="">
+                        </button>
+                    </div>
+
+                    <!-- Middle: course grid -->
+                    <div class="catalog-grid">
+                        <!-- course cards go here -->
+                    </div>
+
+                    <!-- Bottom: pagination -->
+                    <div class="catalog-pagination">
+                        <!-- pagination goes here -->
+                    </div>
+                </div>
+            </div>
+ 
+
+        </main>
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="footer-brand-top">
+                            <div class="footer-logo">
+                                <div class="logo">
+                                    <img src="assets/logo.svg" alt="logo">
+                                </div>
+                                <span>Bootcamp</span>
+                            </div>
+                            <p>Your learning journey starts here!<br>Browse courses to get started</p>
+                        </div>
+                        <div class="footer-socials">
+                            <a href="#"><img src="assets/Facebook.svg" alt="facebook"></a>
+                            <a href="#"><img src="assets/Twitter.svg" alt="twitter"></a>
+                            <a href="#"><img src="assets/Instagram.svg" alt="instagram"></a>
+                            <a href="#"><img src="assets/LinkedIn.svg" alt="linkedin"></a>
+                            <a href="#"><img src="assets/YouTube.svg" alt="youtube"></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Explore</h4>
+                            <div class="footer-column-links">
+                                <a href="#">Enrolled Courses</a>
+                                <a href="catalog.html">Browse Courses</a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Account</h4> 
+                            <div class="footer-column-links">
+                                <a href="#">My Profile</a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Contact</h4>
+                            <div class="footer-column-info">
+                                <p><img src="assets/envelope.svg">contact@company.com</p>
+                                <p><img src="assets/phone.svg">(+995) 551 111 222</p>
+                                <p><img src="assets/location.svg">Aghmashenebeli St.115</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-bottom-left">Copyright © 2026 Redberry International</p>
+                    <div class="footer-bottom-right">
+                        <span>All Rights Reserved</span> |
+                        <a href="#">Terms and Conditions</a> |
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+        <script src="script.js"></script>
+        <script src="catalog.js"></script>
+    </body>
+</html>

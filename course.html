@@ -1,0 +1,23 @@
+const sortSelected = document.querySelector('.sort-selected');
+const sortOptions = document.querySelector('.sort-options');
+
+if (sortSelected && sortOptions) {
+    sortSelected.addEventListener('click', () => {
+        sortOptions.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.sort-option').forEach(option => {
+        option.addEventListener('click', () => {
+            document.querySelectorAll('.sort-option').forEach(o => o.classList.remove('active'));
+            option.classList.add('active');
+            sortSelected.querySelector('span').textContent = option.textContent;
+            sortOptions.classList.remove('open');
+        });
+    });
+
+    // close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.sort-dropdown')) {
+            sortOptions.classList.remove('open');
+        }
+    });

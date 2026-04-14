@@ -50,8 +50,11 @@ dots.forEach((dot, index) => {
     });
 });
 
-// when logged out
-continueLearning.classList.add('continue-learning-logged-out');
+// // when logged out
+// continueLearning.classList.add('continue-learning-logged-out');
 
-// when logged in
-continueLearning.classList.add('continue-learning-logged-in');
+// // when logged in
+// continueLearning.classList.add('continue-learning-logged-in');
+
+// document.querySelector('.filter-count').textContent = activeFilters;
+
