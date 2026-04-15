@@ -1,23 +1,333 @@
-const sortSelected = document.querySelector('.sort-selected');
-const sortOptions = document.querySelector('.sort-options');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
 
-if (sortSelected && sortOptions) {
-    sortSelected.addEventListener('click', () => {
-        sortOptions.classList.toggle('open');
-    });
+    <body>
+        <nav>
+            <div class="nav-left">
+                <a href="index.html">
+                    <div class="logo">
+                        <img src="assets/logo.svg" alt="logo">
+                    </div>
+                </a>
+            </div>
+            <div class="nav-right">
+                <a  href="catalog.html" class="browse-link">
+                    <img src="assets/Nav icon.svg" alt="">
+                   <span>Browse Courses</span></a>
 
-    document.querySelectorAll('.sort-option').forEach(option => {
-        option.addEventListener('click', () => {
-            document.querySelectorAll('.sort-option').forEach(o => o.classList.remove('active'));
-            option.classList.add('active');
-            sortSelected.querySelector('span').textContent = option.textContent;
-            sortOptions.classList.remove('open');
-        });
-    });
+                <!-- logged out -->
+                <div class="nav-auth" id="nav-logged-out">
+                    <button class="btn-login">Log In</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
 
-    // close dropdown when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.sort-dropdown')) {
-            sortOptions.classList.remove('open');
-        }
-    });
+                <div class="nav-user" id="nav-logged-in">
+                    <a href="#" class="enrolled-link">
+                        <img src="assets/Nav icon2.svg" alt="">
+                        <span> Enrolled Courses </span>
+                    </a>
+                    <a href="#" class="profile-icon">
+                        <img src="assets/User.svg" alt="profile">
+                        <span class="status-dot"></span>
+                    </a>
+                </div>
+
+            </div>
+
+        </nav>
+
+        <main>
+
+            <div class="course-main-wrapper">
+                <div class="course-info">
+                    <div class="course-info-top">
+                        <div class="breadcrumbs2">
+                            <a href="index.html" class="breadcrumbs-home">Home</a>
+                            <img src="assets/gt.svg" alt="" class="breadcrumbs-arrow">
+                            <a href="catalog.html"  class="breadcrumbs-browse">Browse</a>
+                            <img src="assets/gt.svg" alt="" class="breadcrumbs-arrow">
+                            <span class="breadcrumbs-course">Development</span>                            
+                        </div>
+                        <h1 class="main-course-title">Advanced React & TypeScript Development</h1>
+                    </div>
+                    <div class="course-info-bottom-wrapper">
+                        <div class="course-info-mid">
+                            <img class="course-image" src="assets/coursep.jpg" alt="">
+                            <div class="course-duration-rate-tag">
+                                <div class="course-duration-rate">
+                                    <div class="course-duration">
+                                        <div class="course-weeks">
+                                            <img class="weeks-icon" src="assets/calendar.svg" alt="">
+                                            <span class="weeks-text">12 Weeks</span>
+                                        </div>
+                                        <div class="course-days">
+                                            <img class="days-icon" src="assets/clock.svg" alt="">
+                                            <span class="days-text">128 Hours</span>
+                                        </div>
+                                    </div>
+                                    <div class="rating-big">
+                                        <img src="assets/union-big.svg" alt="rating">
+                                        <span>4.9</span>
+                                    </div>
+                                </div>
+                                <div class="tag">
+                                    <img src="assets/dev-icon.svg" alt=""> Development
+                                </div>
+                            </div>
+                        </div>
+                        <div class="course-info-bottom">
+                            <div>
+                                <div class="instructor-chip">
+                                        <img src="assets/instructor1.jpg" alt="Marilyn Mango">
+                                        <span>Marilyn Mango</span>
+                                </div>
+                            </div>
+                            <div class="course-information">
+                                    <h3>Course Description</h3>
+                                    <div class="course-info-description">
+                                        <p>This course focuses on building scalable, production-level front-end applications using React and TypeScript. It covers advanced component architecture, strong typing strategies, state management patterns, and performance optimization techniques used in modern web products.</p> <br/>
+                                        <p>Participants learn how to design reusable components, structure large codebases, and improve maintainability through strict typing and clear interfaces. The course also explores advanced hooks, custom hooks, API integration, error handling, and testing approaches commonly used in professional development environments.</p>
+                                        <p>This course focuses on building scalable, production-level front-end applications using React and TypeScript. It covers advanced component architecture, strong typing strategies, state management patterns, and performance optimization techniques used in modern web products.</p>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-scheduling">
+                    <div class="schedule">
+                        <div class="weekly-schedule">
+                            <button class="weekly-schedule-button active">
+                                <div>
+                                    <span class="schedule-ring">1</span>
+                                    <h3 class="schedule-text">Weekly Schedule</h3>
+                                </div>
+                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.27548 0.193912C1.20331 0.131926 1.11841 0.0834684 1.02563 0.0513033C0.932857 0.0191383 0.834018 0.00389618 0.73476 0.00644822C0.635501 0.00900026 0.537768 0.0292959 0.44714 0.0661764C0.356512 0.103057 0.274764 0.1558 0.206563 0.221394C0.138363 0.286988 0.0850452 0.36415 0.0496549 0.448472C0.0142646 0.532794 -0.00250549 0.622625 0.000302383 0.712837C0.00311025 0.803049 0.025441 0.891876 0.0660195 0.974245C0.106598 1.05661 0.16463 1.13091 0.236802 1.1929L7.04038 7.0329C7.18073 7.1535 7.36656 7.2207 7.55972 7.2207C7.75287 7.2207 7.9387 7.1535 8.07906 7.0329L14.8834 1.1929C14.9571 1.13132 15.0167 1.05704 15.0586 0.974366C15.1005 0.891695 15.1239 0.802281 15.1275 0.711318C15.131 0.620355 15.1146 0.529656 15.0793 0.444491C15.044 0.359325 14.9904 0.28139 14.9216 0.215212C14.8528 0.149034 14.7703 0.095932 14.6788 0.0589914C14.5873 0.0220509 14.4886 0.00200796 14.3884 2.62363e-05C14.2883 -0.00195549 14.1888 0.014163 14.0955 0.0474472C14.0023 0.080731 13.9173 0.130516 13.8455 0.193911L7.55972 5.5887L1.27548 0.193912Z" fill="#130E67"/></svg>
+                            </button>
+                            <div class="scheduling-choices">
+                                <span class="scheduling-choice">Mon - Wed</span>
+                                <span class="scheduling-choice disabled">Tue - Thu</span>
+                                <span class="scheduling-choice">Wed - Fri</span>
+                                <span class="scheduling-choice disabled">Weekend</span>
+                            </div>
+                        </div>
+                        <div class="time-slot">
+                            <button class="weekly-schedule-button active">
+                                <div>
+                                    <span class="schedule-ring">2</span>
+                                    <h3 class="schedule-text">Time Slot</h3>
+                                </div>
+                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.27548 0.193912C1.20331 0.131926 1.11841 0.0834684 1.02563 0.0513033C0.932857 0.0191383 0.834018 0.00389618 0.73476 0.00644822C0.635501 0.00900026 0.537768 0.0292959 0.44714 0.0661764C0.356512 0.103057 0.274764 0.1558 0.206563 0.221394C0.138363 0.286988 0.0850452 0.36415 0.0496549 0.448472C0.0142646 0.532794 -0.00250549 0.622625 0.000302383 0.712837C0.00311025 0.803049 0.025441 0.891876 0.0660195 0.974245C0.106598 1.05661 0.16463 1.13091 0.236802 1.1929L7.04038 7.0329C7.18073 7.1535 7.36656 7.2207 7.55972 7.2207C7.75287 7.2207 7.9387 7.1535 8.07906 7.0329L14.8834 1.1929C14.9571 1.13132 15.0167 1.05704 15.0586 0.974366C15.1005 0.891695 15.1239 0.802281 15.1275 0.711318C15.131 0.620355 15.1146 0.529656 15.0793 0.444491C15.044 0.359325 14.9904 0.28139 14.9216 0.215212C14.8528 0.149034 14.7703 0.095932 14.6788 0.0589914C14.5873 0.0220509 14.4886 0.00200796 14.3884 2.62363e-05C14.2883 -0.00195549 14.1888 0.014163 14.0955 0.0474472C14.0023 0.080731 13.9173 0.130516 13.8455 0.193911L7.55972 5.5887L1.27548 0.193912Z" fill="#130E67"/></svg>
+                            </button>
+                            <div class="scheduling-choices-time">
+                                <div class="scheduling-choice-time disabled">
+                                    <div class="scheduling-choice-time-inside">
+                                        <img src="assets/cloudy.svg" alt="">
+                                        <div class="scheduling-choice-time-inside-txt">
+                                            <span class="scheduling-wd">Morning</span>
+                                            <span class="scheduling-time">9:00 AM – 12:00 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scheduling-choice-time">
+                                    <div class="scheduling-choice-time-inside">
+                                        <img src="assets/sun.svg" alt="">
+                                        <div class="scheduling-choice-time-inside-txt">
+                                            <span class="scheduling-wd">Morning</span>
+                                            <span class="scheduling-time">6:00 AM – 9:00 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scheduling-choice-time disabled">
+                                    <div class="scheduling-choice-time-inside">
+                                        <img src="assets/moon.svg" alt="">
+                                        <div class="scheduling-choice-time-inside-txt">
+                                            <span class="scheduling-wd">Morning</span>
+                                            <span class="scheduling-time">12:00 AM – 12:00 PM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="session-type">
+                            <button class="weekly-schedule-button disabled">
+                                <div>
+                                    <span class="schedule-ring">3</span>
+                                    <h3 class="schedule-text">Session Type</h3>
+                                </div>
+                                <svg width="16" height="8" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.27548 0.193912C1.20331 0.131926 1.11841 0.0834684 1.02563 0.0513033C0.932857 0.0191383 0.834018 0.00389618 0.73476 0.00644822C0.635501 0.00900026 0.537768 0.0292959 0.44714 0.0661764C0.356512 0.103057 0.274764 0.1558 0.206563 0.221394C0.138363 0.286988 0.0850452 0.36415 0.0496549 0.448472C0.0142646 0.532794 -0.00250549 0.622625 0.000302383 0.712837C0.00311025 0.803049 0.025441 0.891876 0.0660195 0.974245C0.106598 1.05661 0.16463 1.13091 0.236802 1.1929L7.04038 7.0329C7.18073 7.1535 7.36656 7.2207 7.55972 7.2207C7.75287 7.2207 7.9387 7.1535 8.07906 7.0329L14.8834 1.1929C14.9571 1.13132 15.0167 1.05704 15.0586 0.974366C15.1005 0.891695 15.1239 0.802281 15.1275 0.711318C15.131 0.620355 15.1146 0.529656 15.0793 0.444491C15.044 0.359325 14.9904 0.28139 14.9216 0.215212C14.8528 0.149034 14.7703 0.095932 14.6788 0.0589914C14.5873 0.0220509 14.4886 0.00200796 14.3884 2.62363e-05C14.2883 -0.00195549 14.1888 0.014163 14.0955 0.0474472C14.0023 0.080731 13.9173 0.130516 13.8455 0.193911L7.55972 5.5887L1.27548 0.193912Z" fill="#130E67"/></svg>
+                            </button>
+                            <div class="scheduling-choices-session">
+                                <div class="scheduling-choice-session-wrapper">
+                                    <div class="scheduling-choice-session">
+                                        <div class="scheduling-choice-session-inside">
+                                            <div class="scheduling-choice-session-inside">
+                                                <div class="session-icon">
+                                                    <img src="assets/Desktop.svg" alt="">
+                                                </div>
+                                                <div class="session-texts">
+                                                    <div class="session-texts-top">
+                                                        <span class="session-type-txt">Online</span>
+                                                        <div class="session-address"><span class="address">Google Meet</span></div>
+                                                    </div>
+                                                    <span class="session-price">Included</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="seat-availability">50 Seats Available</span>
+                                </div>
+                                <div class="scheduling-choice-session-wrapper">
+                                    <div class="scheduling-choice-session disabled">
+                                        <div class="scheduling-choice-session-inside">
+                                            <div class="scheduling-choice-session-inside">
+                                                <div class="session-icon">
+                                                    <img src="assets/Users.svg" alt="">
+                                                </div>
+                                                <div class="session-texts">
+                                                    <div class="session-texts-top">
+                                                        <span class="session-type-txt">In-Person</span>
+                                                        <div class="session-address"><img class="session-location" src="assets/session-location.svg" alt=""> <span class="address">Chavchavadze St.34</span></div>
+                                                    </div>
+                                                    <span class="session-price">+ $30</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="seat-availability">No Seats Available</span>
+                                </div>
+                                <div class="scheduling-choice-session-wrapper">
+                                    <div class="scheduling-choice-session disabled">
+                                        <div class="scheduling-choice-session-inside">
+                                            <div class="session-icon">
+                                                <img src="assets/Intersect.svg" alt="">
+                                            </div>
+                                            <div class="session-texts">
+                                                <div class="session-texts-top">
+                                                    <span class="session-type-txt">Hybrid</span>
+                                                    <div class="session-address"><img class="session-location" src="assets/session-location.svg" alt=""> <span class="address">Chavchavadze St.34</span></div>
+                                                </div>
+                                                <span class="session-price">+ $50</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="seat-availability">No Seats Available</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="enrollment"></div>
+                    </div>
+
+                    <div class="scheduling-price">
+                        <div class="scheduling-price-inside">
+                            <div class="price-calculation">
+                                <div class="total-price">
+                                    <h3>Total Price</h3>
+                                    <span class="total-price-calculated">$349</span>
+                                </div>
+                                <div class="price-addition">
+                                    <div class="base-price">
+                                        <h3>Base Price</h3>
+                                        <span class="base-price-add">+ $0</span>
+                                    </div>
+                                    <div class="session-type-price">
+                                        <h3>Session Type</h3>
+                                        <span class="session-price-add">+ $0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="enroll-button disabled">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <div class="authentication-req">
+                        <div class="authentication-req-txt">
+                            <div class="authentication-req-txt-warning">
+                                <img src="assets/warning.svg" alt="">
+                                <h3>Authentication Required</h3>
+                            </div>
+                            <span>You need sign in to your profile before enrolling in this course.</span>
+                        </div>
+                        <button class="course-sign-in">Sign in <img src="assets/sign-in-arrow.svg" alt=""></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+
+
+        <footer>
+            <div class="footer-wrapper">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <div class="footer-brand-top">
+                            <div class="footer-logo">
+                                <div class="logo">
+                                    <img src="assets/logo.svg" alt="logo">
+                                </div>
+                                <span>Bootcamp</span>
+                            </div>
+                            <p>Your learning journey starts here!<br>Browse courses to get started</p>
+                        </div>
+                        <div class="footer-socials">
+                            <a href="#"><img src="assets/Facebook.svg" alt="facebook"></a>
+                            <a href="#"><img src="assets/Twitter.svg" alt="twitter"></a>
+                            <a href="#"><img src="assets/Instagram.svg" alt="instagram"></a>
+                            <a href="#"><img src="assets/LinkedIn.svg" alt="linkedin"></a>
+                            <a href="#"><img src="assets/YouTube.svg" alt="youtube"></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Explore</h4>
+                            <div class="footer-column-links">
+                                <a href="#">Enrolled Courses</a>
+                                <a href="catalog.html">Browse Courses</a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Account</h4> 
+                            <div class="footer-column-links">
+                                <a href="#">My Profile</a>
+                            </div>
+                        </div>
+                        <div class="footer-column">
+                            <h4>Contact</h4>
+                            <div class="footer-column-info">
+                                <p><img src="assets/envelope.svg">contact@company.com</p>
+                                <p><img src="assets/phone.svg">(+995) 551 111 222</p>
+                                <p><img src="assets/location.svg">Aghmashenebeli St.115</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-bottom-left">Copyright © 2026 Redberry International</p>
+                    <div class="footer-bottom-right">
+                        <span>All Rights Reserved</span> |
+                        <a href="#">Terms and Conditions</a> |
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+        <script src="script.js"></script>
+    </body>
+</html>

@@ -29,6 +29,10 @@ function updateSlider() {
     }
 }
 
+
+
+
+
 leftArrow.addEventListener('click', () => {
     if (currentSlide > 0) {
         currentSlide--;
