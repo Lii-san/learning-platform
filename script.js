@@ -29,7 +29,13 @@ function updateSlider() {
     }
 }
 
-
+function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlider();
+    }, 3500);
+}
 
 
 
@@ -54,11 +60,6 @@ dots.forEach((dot, index) => {
     });
 });
 
-// // when logged out
-// continueLearning.classList.add('continue-learning-logged-out');
 
-// // when logged in
-// continueLearning.classList.add('continue-learning-logged-in');
-
-// document.querySelector('.filter-count').textContent = activeFilters;
+document.querySelector('.filter-count').textContent = activeFilters;
 

@@ -759,7 +759,7 @@ main {
 }
 
 
-
+.continue-learning-logged-in { display: none; }
 .continue-learning-logged-out {
     width: 1566px;
     height: 369px;
@@ -830,6 +830,12 @@ main {
     filter: blur(8px);
     pointer-events: none;
 }
+.continue-learning-cards-u {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    pointer-events: none;
+}
 
 
 .continue-learning-cards {
@@ -858,7 +864,6 @@ main {
     width: 466px;
     height: 123px;
     gap: 16px;
-    opacity: 0.76;
 }
 
 .continue-learning-card-image {
@@ -929,6 +934,12 @@ main {
     justify-content: space-between;
     width: 466px;
     height: 48px;
+}
+.continue-learning-cards-b .continue-learning-card-bottom {
+    opacity: 0.76;
+}
+
+.continue-learning-cards-b .continue-learning-card-top {
     opacity: 0.76;
 }
 
@@ -990,9 +1001,10 @@ main {
 }
 
 .continue-learning-logged-out .continue-learning-cards-b {
-    filter: blur(8px);
     pointer-events: none;
 }
+
+
 
 
 .login-prompt {
